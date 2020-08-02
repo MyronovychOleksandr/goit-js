@@ -4,10 +4,9 @@ const formatString = function (string) {
   }
 
   if (string.length > 40) {
-    const stringSplite = string.split("").slice(0, 40);
-    stringSplite.push("...");
-    const stringModidied = stringSplite.join("");
-    return stringModidied;
+    const stringSplite = string.slice(0, 40);
+    const newString = stringSplite + "...";
+    return newString;
   }
 };
 

@@ -10,7 +10,11 @@ while (input !== null) {
   }
 }
 
-for (let number of numbers) {
-  total += Number(number);
+if (numbers.length !== 0) {
+  for (let number of numbers) {
+    total += Number(number);
+  }
+  console.log(`Общая сумма чисел равна [${total}]`);
+} else {
+  console.log("Вы не ввели число!");
 }
-console.log(`Общая сумма чисел равна [${total}]`);

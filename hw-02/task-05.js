@@ -2,12 +2,14 @@ const checkForSpam = function (message) {
   let result;
   let messageLower = message.toLowerCase();
 
-  if (messageLower.includes("spam") || messageLower.includes("sale")) {
-    result = true;
-  } else {
-    result = false;
-  }
-  return result;
+  return messageLower.includes("spam") || messageLower.includes("sale");
+  //   if (messageLower.includes("spam") || messageLower.includes("sale")) {
+  //     result = true;
+  //   } else {
+  //     result = false;
+  //   }
+  //   return result;
+  // };
 };
 
 /*
