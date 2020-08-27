@@ -3,9 +3,7 @@ import users from "./users.js";
 const getUsersWithGender = (users, gender) => {
   return users
     .filter(function (user) {
-      if (user.gender === gender) {
-        return user.name;
-      }
+      return user.gender === gender;
     })
     .map(function (user) {
       return user.name;
