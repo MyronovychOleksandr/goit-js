@@ -17,9 +17,9 @@ const images = [
 ];
 const listRef = document.getElementById("gallery");
 
-const items = images.forEach(function (img) {
-  listRef.insertAdjacentHTML(
-    "beforeend",
-    `<li><img class="img" src="${img.url}" alt="${img.alt}"></li>`
-  );
+const items = images.map(function (img) {
+  return `<li><img class="img" src="${img.url}" alt="${img.alt}"></li>`;
 });
+console.log(items);
+
+listRef.insertAdjacentHTML("beforeend", items.join(""));

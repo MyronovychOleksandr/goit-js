@@ -17,6 +17,10 @@
     justify-content: space-between;
 }
 
+#gallery {
+    list-style: none;
+}
+
 .img {
     width: 430px;
     height: 300px;
