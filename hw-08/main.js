@@ -27,28 +27,49 @@ gallery.forEach((object) => {
   ulGallery.append(item);
 });
 
-ulGallery.addEventListener("click", (event) => {
-  console.log(event.target.dataset.sourse);
+ulGallery.addEventListener("click", ulGalleryOpenModalHandler);
+lightbox.addEventListener('click', lightboxCloseModalHandler)
+lightboxButton.addEventListener("click", closeModal)
+// window.addEventListener("keydown", escapeCloseModalHandler);
+
+function ulGalleryOpenModalHandler(event) {
+  if(event.target.nodeName !== "IMG") {
+    return;
+}
+  openModal(event);
+  window.addEventListener("keydown", escapeCloseModalHandler);
+}
+
+function closeModal() {
+  lightbox.classList.remove("is-open");
+  lightboxImage.src = "";
+}
+
+function openModal(event) {
   const newSrc = event.target.dataset.sourse;
   lightbox.classList.add("is-open");
   lightboxImage.src = newSrc;
-  window.addEventListener("keydown", (event) => {
-    console.dir(event);
-    console.dir(ulGallery);
-    if (event.code === "ArrowRight") {
-      ulGallery.childNodes[1];
-    }
-  });
-});
+}
 
-lightboxButton.addEventListener("click", () => {
-  lightbox.classList.remove("is-open");
-  lightboxImage.src = "";
-});
-
-window.addEventListener("keydown", (event) => {
+function escapeCloseModalHandler(event) {
   if (event.code === "Escape") {
-    lightbox.classList.remove("is-open");
-    lightboxImage.src = "";
+    closeModal()
   }
-});
+  window.removeEventListener("keydown", escapeCloseModalHandler);
+}
+
+function lightboxCloseModalHandler(event) {
+  if(event.target.nodeName !== "IMG") {
+    closeModal()
+  }
+}
+
+function modalSliderHandler (event) {
+  // window.addEventListener("keydown", (event) => {
+    //   console.dir(event);
+    //   console.dir(ulGallery);
+    //   if (event.code === "ArrowRight") {
+    //     ulGallery.childNodes[1];
+    //   }
+    // });
+}
