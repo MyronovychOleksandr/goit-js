@@ -64,12 +64,3 @@ function lightboxCloseModalHandler(event) {
   }
 }
 
-function modalSliderHandler (event) {
-  // window.addEventListener("keydown", (event) => {
-    //   console.dir(event);
-    //   console.dir(ulGallery);
-    //   if (event.code === "ArrowRight") {
-    //     ulGallery.childNodes[1];
-    //   }
-    // });
-}
