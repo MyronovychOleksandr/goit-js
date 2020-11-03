@@ -43,6 +43,7 @@ function ulGalleryOpenModalHandler(event) {
 function closeModal() {
   lightbox.classList.remove("is-open");
   lightboxImage.src = "";
+  window.removeEventListener("keydown", escapeCloseModalHandler);
 }
 
 function openModal(event) {
@@ -55,7 +56,6 @@ function escapeCloseModalHandler(event) {
   if (event.code === "Escape") {
     closeModal()
   }
-  window.removeEventListener("keydown", escapeCloseModalHandler);
 }
 
 function lightboxCloseModalHandler(event) {
